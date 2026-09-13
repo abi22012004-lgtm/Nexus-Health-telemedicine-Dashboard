@@ -1,0 +1,98 @@
+/* src/styles/main.scss */
+
+:root {
+  // Primary - Royal Navy
+  --color-primary-main: #1E3A8A;
+  --color-primary-light: #3B82F6;
+  --color-primary-dark: #1E40AF;
+
+  // Secondary - Bright Cerulean
+  --color-secondary-main: #0EA5E9;
+  --color-secondary-light: #38BDF8;
+  --color-secondary-dark: #0284C7;
+
+  // Accent - Soft Violet
+  --color-accent-main: #8B5CF6;
+  --color-accent-light: #A78BFA;
+  --color-accent-dark: #7C3AED;
+
+  // Backgrounds
+  --color-bg-default: #F8FAFC;
+  --color-bg-surface: #FFFFFF;
+  --color-bg-alt: #F1F5F9;
+
+  // Text
+  --color-text-primary: #334155;
+  --color-text-secondary: #64748B;
+  --color-text-disabled: #94A3B8;
+
+  // Borders & Shadows
+  --border-radius-default: 8px;
+  --shadow-premium: 0 4px 20px rgba(0, 0, 0, 0.05), 0 1px 3px rgba(0, 0, 0, 0.02);
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', 'Inter', 'Roboto', -apple-system, BlinkMacSystemFont, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: linear-gradient(135deg, #072214 0%, #114228 35%, #044b7d 70%, #022c4f 100%);
+  background-size: 200% 200%;
+  animation: gradientBG 15s ease infinite;
+  color: var(--color-text-primary);
+  line-height: 1.6;
+  word-break: break-word; // Ensures long strings break cleanly on 320px mobile screens
+}
+
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes buttonGradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  opacity: 0;
+  animation: fadeInUp 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+.delay-1 { animation-delay: 0.1s; }
+.delay-2 { animation-delay: 0.2s; }
+.delay-3 { animation-delay: 0.3s; }
+.delay-4 { animation-delay: 0.4s; }
+.delay-5 { animation-delay: 0.5s; }
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  color: var(--color-text-primary);
+  margin-bottom: 0.5rem;
+}
+
+a {
+  color: var(--color-primary-main);
+  text-decoration: none;
+  
+  &:hover {
+    text-decoration: underline;
+  }
+}

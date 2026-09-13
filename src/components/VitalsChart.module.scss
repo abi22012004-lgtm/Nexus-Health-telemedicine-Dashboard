@@ -1,0 +1,69 @@
+.chartCard {
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  background-color: var(--color-bg-surface, #FFFFFF);
+  border-radius: 12px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 1.5rem 0 1.5rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.title {
+  font-weight: 600 !important;
+  color: var(--color-text-primary);
+}
+
+.customTooltip {
+  background-color: var(--color-bg-surface, #FFFFFF);
+  border: 2px solid transparent;
+  background-clip: padding-box;
+  border-radius: 8px;
+  padding: 12px;
+  box-shadow: var(--shadow-premium, 0 8px 32px rgba(0, 0, 0, 0.12));
+  position: relative;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: -2px; bottom: -2px; left: -2px; right: -2px;
+    background: linear-gradient(135deg, var(--color-secondary-main), var(--color-accent-main));
+    z-index: -1;
+    border-radius: 10px;
+  }
+
+  .tooltipLabel {
+    font-weight: 600;
+    margin: 0 0 8px 0;
+    color: var(--color-text-primary, #0F172A);
+    font-size: 0.875rem;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+    padding-bottom: 4px;
+  }
+
+  .tooltipSys {
+    color: var(--color-secondary-main, #0EA5E9);
+    margin: 4px 0;
+    font-size: 0.875rem;
+    font-weight: 500;
+    
+    span {
+      font-weight: 700;
+    }
+  }
+
+  .tooltipDia {
+    color: var(--color-accent-main, #8B5CF6);
+    margin: 4px 0;
+    font-size: 0.875rem;
+    font-weight: 500;
+    
+    span {
+      font-weight: 700;
+    }
+  }
+}

@@ -1,0 +1,43 @@
+.layout {
+  display: grid;
+  grid-template-columns: 1fr; // Mobile single column
+  min-height: 100vh;
+  background: linear-gradient(135deg, #072214 0%, #114228 35%, #044b7d 70%, #022c4f 100%);
+  background-size: 200% 200%;
+  animation: gradientBG 15s ease infinite;
+
+  @media (min-width: 768px) {
+    grid-template-columns: 250px 1fr; // Desktop grid with sidebar
+  }
+}
+
+.mainWrapper {
+  display: flex;
+  flex-direction: column;
+  min-width: 0; // Prevent flexbox blowout
+  height: 100vh;
+  overflow: hidden;
+}
+
+.mobileHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background-color: var(--color-bg-surface);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+
+  @media (min-width: 768px) {
+    display: none; // Handled by Sidebar on desktop
+  }
+}
+
+.content {
+  padding: 1.5rem;
+  flex-grow: 1;
+  overflow-y: auto; // Enables scrolling within main content
+  
+  @media (min-width: 768px) {
+    padding: 2rem 2.5rem;
+  }
+}
